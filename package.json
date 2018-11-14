@@ -1,0 +1,43 @@
+{
+  "name": "wetility",
+  "version": "0.1.0",
+  "description": "Wechat App utilities",
+  "main": "index.js",
+  "scripts": {
+    "lint": "tslint 'src/**/*.ts'",
+    "prebuild": "del-cli \"lib/**\" \"!lib\"",
+    "build": "tsc -p tsconfig.prod.json",
+    "prerelease": "cpy LICENSE \"package*.json\" \"*.md\" lib",
+    "release": "npm publish lib",
+    "postrelease": "del-cli \"lib/LICENSE\" \"lib/package*.json\" \"lib/*.md\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seancheung/wetility.git"
+  },
+  "keywords": [
+    "wechat",
+    "weixin"
+  ],
+  "author": "Sean Cheung",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/seancheung/wetility/issues"
+  },
+  "homepage": "https://github.com/seancheung/wetility#readme",
+  "devDependencies": {
+    "@types/bluebird": "^3.5.24",
+    "cpy-cli": "^2.0.0",
+    "del-cli": "^1.1.0",
+    "prettier": "^1.15.2",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.11.0",
+    "tslint-config-prettier": "^1.16.0",
+    "tslint-consistent-codestyle": "^1.14.1",
+    "typescript": "^3.1.6"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.3",
+    "regenerator-runtime": "^0.12.1"
+  }
+}
